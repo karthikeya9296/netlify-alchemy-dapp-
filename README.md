@@ -1,127 +1,162 @@
-# CW3D Dapp Boilerplate For Netlify
+Kosma - Decentralized Social Media Platform
+Kosma is an innovative decentralized social media platform focused on user privacy, content ownership, and seamless blockchain integration. It allows users to mint NFTs, manage digital content, and conduct secure transactions while ensuring privacy and control. Kosma integrates multiple blockchain protocols, including Polygon, Flow, and LayerZero for cross-chain communication, offering a non-intrusive and non-addictive user experience.
 
-This boilerplate is set up to be deployed on Netlify and you can directly deploy this project by clicking the button below:
+Features
+NFT Minting & Licensing: Mint and manage NFTs for digital content, integrated with royalty payments and licensing.
+Cross-Chain Communication: Seamlessly interact across multiple blockchains using LayerZero V2.
+Secure Payment Handling: Manage payments using Circle USDC and Superfluid for streaming payments.
+Digital Attestations: Secure and verify content using Sign Protocol.
+Membership Management: Use Unlock Protocol to handle membership access and subscription services.
+AI Content Generation: Generate AI-based content directly within the platform.
+Enhanced Privacy: Protect user data with encryption and decentralized technologies.
+Supported Chains
+Ethereum
+Polygon
+Polygon zkEVM
+Arbitrum
+Optimism
+Flow Blockchain
+Getting Started
+Prerequisites
+To run the Kosma platform locally, you need:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates)
+Node.js
+Yarn
+Git
+Truffle or Hardhat
+Installation
+Clone the repository:
 
-Visit the [Live Demo here](https://alchemy-cw3d-dapp-boilerplate.netlify.app/)
+bash
+Copy code
+git clone https://github.com/karthikeya9296/Kosma.git
+cd kosma
+Install dependencies:
 
-## Resources
-Please refer to CW3D's documentation and the following useful links for an in depth explanation of how to work with projects bootstrapped with CW3D:
+bash
+Copy code
+yarn install
+Set up environment variables: Create a .env file in the root directory and add your secret keys and configuration settings.
 
--   [Docs](https://docs.alchemy.com/docs/create-web3-dapp) - Everything you need to know when using CW3D
--   [GitHub](https://github.com/alchemyplatform/create-web3-dapp) - look at the extensive code example or start contributing
--   [Website](https://createweb3dapp.alchemy.com) - Learn more about CW3D and add components to your project
--   [Templates](https://createweb3dapp.alchemy.com/#templates) - Check out the pre-built project templates
--   [Components Library](https://createweb3dapp.alchemy.com/#components) - Add features directly to your project through components
--   [Examples](https://github.com/alchemyplatform/create-web3-dapp-examples) - See the components implemented in a real world dapp
--   [Community](https://t.me/createweb3dapp) - Meet other builders, get support, and give feedback!
+Run the backend:
 
-## Overview
+bash
+Copy code
+node backend/app.js
+Start the frontend:
 
-This project serves as a boilerplate for creating decentralized applications (dApps) using [Create Web3 Dapp](https://github.com/alchemyplatform/create-web3-dapp). It is preconfigured to be deployed on [Netlify](https://www.netlify.com/), providing you with a seamless way to get your dApp up and running in no time.
+bash
+Copy code
+yarn run dev
+Deploy smart contracts:
 
-This boilerplate is built using [CW3D (Create Web3 Dapp)](https://github.com/alchemyplatform/create-web3-dapp), a powerful tool developed by [Alchemy](https://www.alchemy.com/) that allows developers to rapidly create and deploy dApps.
+bash
+Copy code
+yarn run deployContracts
+Deploying to Netlify or Vercel
+Kosma is configured for easy deployment to platforms like Netlify or Vercel. You can use their deployment guides to get your platform live.
 
-## What's Included?
+Deploying to Netlify
+Click the button below to deploy Kosma directly to Netlify:
 
-This boilerplate has everything you need to start building a dapp:
 
-- Next.js
-- Wagmi Hooks
-- Ethers.js
-- Rainbowkit
-- Alchemy SDK
 
-## Supported Chains
+Deploying to Vercel
+Connect your GitHub repository.
+Set environment variables under "Settings".
+Click "Deploy".
+Project Structure
+Kosma is a Next.js application with a well-structured backend and frontend, smart contracts, and documentation:
 
-The project supports all the major EVM chains:
+📦 kosma
+ ┣ 📂 contracts                # Smart contracts for blockchain interaction
+ ┃ ┣ 📜 KosmaNFT.sol
+ ┃ ┣ 📜 KosmaPayments.sol
+ ┃ ┣ 📜 LayerZeroMessaging.sol
+ ┃ ┣ 📜 SignAttestations.sol
+ ┃ ┣ 📜 StoryIntegration.sol
+ ┃ ┣ 📜 FlowNFT.sol
+ ┃ ┗ 📜 UnlockMemberships.sol
+ ┣ 📂 backend                  # Backend server to handle APIs and business logic
+ ┃ ┣ 📜 app.js
+ ┃ ┣ 📂 db
+ ┃ ┃ ┗ 📜 dbConfig.js
+ ┃ ┣ 📂 routes
+ ┃ ┃ ┣ 📜 authRoutes.js
+ ┃ ┃ ┣ 📜 contentRoutes.js
+ ┃ ┃ ┣ 📜 paymentRoutes.js
+ ┃ ┃ ┣ 📜 nftRoutes.js
+ ┃ ┃ ┣ 📜 storyRoutes.js
+ ┃ ┃ ┣ 📜 omnichainRoutes.js
+ ┃ ┃ ┣ 📜 membershipRoutes.js
+ ┃ ┃ ┣ 📜 attestRoutes.js
+ ┃ ┃ ┗ 📜 registrationRoutes.js
+ ┃ ┣ 📂 services
+ ┃ ┃ ┣ 📜 blockchainService.js
+ ┃ ┃ ┣ 📜 paymentService.js
+ ┃ ┃ ┣ 📜 nftService.js
+ ┃ ┃ ┣ 📜 storyService.js
+ ┃ ┃ ┣ 📜 membershipService.js
+ ┃ ┃ ┣ 📜 omnichainService.js
+ ┃ ┃ ┣ 📜 attestService.js
+ ┃ ┃ ┣ 📜 userService.js
+ ┃ ┃ ┗ 📜 registrationService.js
+ ┃ ┗ 📂 middlewares
+ ┃ ┃ ┣ 📜 authMiddleware.js
+ ┃ ┃ ┗ 📜 blockchainValidation.js
+ ┣ 📂 frontend                # Frontend web application using React.js
+ ┃ ┣ 📂 public
+ ┃ ┣ 📂 src
+ ┃ ┃ ┣ 📂 components
+ ┃ ┃ ┃ ┣ 📜 Navbar.js
+ ┃ ┃ ┃ ┣ 📜 ContentCard.js
+ ┃ ┃ ┃ ┣ 📜 MembershipCard.js
+ ┃ ┃ ┃ ┣ 📜 PaymentForm.js
+ ┃ ┃ ┃ ┣ 📜 LedgerConnect.js
+ ┃ ┃ ┃ ┣ 📜 AIContentGenerator.js
+ ┃ ┃ ┃ ┗ 📜 Notification.js
+ ┃ ┃ ┣ 📂 pages
+ ┃ ┃ ┃ ┣ 📜 HomePage.js
+ ┃ ┃ ┃ ┣ 📜 ContentPage.js
+ ┃ ┃ ┃ ┣ 📜 ProfilePage.js
+ ┃ ┃ ┃ ┣ 📜 MembershipPage.js
+ ┃ ┃ ┃ ┣ 📜 RegisterPage.js
+ ┃ ┃ ┃ ┗ 📜 RoyaltyDashboard.js
+ ┃ ┃ ┣ 📂 services
+ ┃ ┃ ┃ ┣ 📜 authService.js
+ ┃ ┃ ┃ ┣ 📜 contentService.js
+ ┃ ┃ ┃ ┣ 📜 nftService.js
+ ┃ ┃ ┃ ┣ 📜 paymentService.js
+ ┃ ┃ ┃ ┣ 📜 membershipService.js
+ ┃ ┃ ┃ ┣ 📜 storyService.js
+ ┃ ┃ ┃ ┣ 📜 omnichainService.js
+ ┃ ┃ ┃ ┣ 📜 attestService.js
+ ┃ ┃ ┃ ┗ 📜 aiService.js
+ ┃ ┃ ┣ 📜 App.js
+ ┃ ┃ ┣ 📜 index.js
+ ┃ ┃ ┗ 📂 styles
+ ┃ ┃ ┃ ┗ 📜 app.scss
+ ┣ 📂 scripts                # Deployment and automation scripts
+ ┃ ┣ 📜 deployContracts.js
+ ┃ ┣ 📜 createSubgraph.js
+ ┃ ┗ 📜 deployFrontend.sh
+ ┣ 📂 docs                   # Project documentation
+ ┃ ┣ 📜 systemArchitecture.md
+ ┃ ┣ 📜 apiDocumentation.md
+ ┃ ┗ 📜 developmentGuidelines.md
+ ┣ 📜 README.md
+ ┣ 📜 .env
+ ┣ 📜 package.json
+ ┣ 📜 truffle-config.js
+ ┗ 📜 yarn.lock
+ 
+Documentation
+System Architecture
+API Documentation
+Development Guidelines
+License
+This project is licensed under the ISC License. See the LICENSE file for details.
 
- - Ethereum
- - Polygon
- - Polygon zkEVM
- - Arbitrum
- - Optimism
-
-## Getting Started
-
-### Prerequisites
-
-To get started with this boilerplate, you'll need to have the following software installed on your local machine:
-
-- [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/)
-- [Git](https://git-scm.com/)
-
-### Installation
-
-1. Clone the repository to your local machine:
-   ```
-   git clone https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd netlify-alchemy-dapp-boilerplates
-   ```
-3. Install the required dependencies:
-   ```
-   yarn install
-   ```
-
-### Running the Project
-
-1. Start the local development server:
-   ```
-   yarn run dev
-   ```
-2. Open your browser and navigate to [`http://localhost:3000/`](http://localhost:3000/) to view the dApp in action.
-
-### Deploying to Netlify
-
-This boilerplate is set up to be deployed on Netlify and you can directly deploy this project by clicking the button below:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates)
-
- If you prefer to deploy it manually, you can follow these steps:
-
-1. Sign up for a Netlify account at [netlify.com](https://www.netlify.com/) if you don't already have one.
-2. Install the Netlify CLI:
-   ```
-   npm install -g netlify-cli
-   ```
-3. Run the following command to deploy your dApp to Netlify:
-   ```
-   netlify deploy
-   ```
-4. Follow the prompts and provide the required information. Your dApp will be deployed and accessible via a unique URL.
-
-## Project Structure
-
-The boilerplate project is a Next.js application with the following structure:
-
-```
-📦root
- ┣ 📂components
- ┃ ┣ 📂navigation
- ┃ ┃ ┗ 📜navbar.jsx
- ┃ ┗ 📜InstructionsComponent.jsx
- ┣ 📂layout
- ┃ ┗ 📜mainLayout.jsx
- ┣ 📂pages
- ┃ ┣ 📜_app.js
- ┃ ┗ 📜index.jsx
- ┣ 📂public
- ┃ ┗ 📜cw3d-logo.png
- ┣ 📂styles
- ┃ ┣ 📜Home.module.css
- ┃ ┣ 📜InstructionsComponent.module.css
- ┃ ┣ 📜Navbar.module.css
- ┃ ┗ 📜globals.css
- ┣ 📜.gitignore
- ┣ 📜README.md
- ┣ 📜next.config.js
- ┣ 📜package-lock.json
- ┗ 📜package.json
-```
-
-Start editing the `pages/index.jsx` file to customize the project according to your own needs!
+Contact
+Author: Karthik
+Email: gummadikarthikeya3@gmail.com

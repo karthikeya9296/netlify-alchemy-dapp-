@@ -10,12 +10,13 @@
 		"marketplace": "npx create-web3-dapp marketplace"
 	},
 	"dependencies": {
-		"next": "13.1.2",
+		"@rainbow-me/rainbowkit": "^2.2.0",
+		"alchemy-sdk": "^3.4.4",
+		"next": "^14.2.15",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"alchemy-sdk": "^2.6.2",
-		"@rainbow-me/rainbowkit": "^0.12.4",
-		"wagmi": "^0.12.6"
+		"react-router-dom": "^6.27.0",
+		"wagmi": "^2.12.20"
 	},
 	"devDependencies": {
 		"eslint": "8.36.0",

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Added PropTypes for validation
-import styles from './ContentCard.module.css'; // Adjusted for CSS Modules
+import PropTypes from 'prop-types';
+import styles from './ContentCard.module.css';
 
 const ContentCard = ({ title, description, image }) => {
   return (
@@ -15,7 +15,7 @@ const ContentCard = ({ title, description, image }) => {
 ContentCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string, // Optional image
+  image: PropTypes.string,
 };
 
 export default ContentCard;
